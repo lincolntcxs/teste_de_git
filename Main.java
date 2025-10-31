@@ -13,7 +13,7 @@ public class Main {
             //MENU DE OPCOES
             System.out.println("Escolha uma opcao: \n#1 -> Cadastrar candidato \n#2 -> Cadastrar eleitor" + 
             "\n#3 -> Listar eleitores \n#4 -> Listar candidatos \n#5 -> Listar populacao \n#6 -> Buscar eleitor" +
-            "\n#7 -> Votar \n#-1 -> Sair ");
+            "\n#7 -> Votar \n#8 -> Resultado da eleição \n#-1 -> Sair ");
             opcao = entrada.nextInt();
             entrada.nextLine(); //LIMPA O BUFFER
 
@@ -91,10 +91,21 @@ public class Main {
                     if(aux.get_votou() == false){
                         Voto voto = new Voto(id);
                         id++;
+
                         System.out.println("Digite o reitor em que deseja votar");
                         String voto_reit = entrada.nextLine();
+                        while(!sta.existe_candidato(voto_reit)){
+                            System.out.println("Candidato inválido, por favor digite um candido válido");
+                            voto_reit = entrada.nextLine();
+                        }
+
                         System.out.println("Digite o vice em que deseja votar");
                         String voto_vice = entrada.nextLine();
+                        while(!sta.existe_candidato(voto_vice)){
+                            System.out.println("Candidato inválido, por favor digite um candido válido");
+                            voto_vice = entrada.nextLine();
+                        }
+
                         voto.set_reitor(voto_reit);
                         voto.set_vice(voto_vice);
                         eleicao_2025.add_voto(voto);
@@ -103,6 +114,10 @@ public class Main {
                     } else System.out.println("Esta pessoa ja votou, por favor escolha outra");
                     break;
 
+                //RESULTADO ELEICAO  
+                case 8:
+                    eleicao_2025.listar();
+                    break;
                 //SAIR    
                 case -1:
                     System.out.println("Até mais");
