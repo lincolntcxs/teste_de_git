@@ -100,7 +100,7 @@ public class Main {
                         eleicao_2025.add_voto(voto);
                         aux.votar();
                         System.out.println("Voto registrado com sucesso \n");
-                    } else System.out.println("Esta pessoa ja votou");
+                    } else System.out.println("Esta pessoa ja votou, por favor escolha outra");
                     break;
 
                 //SAIR    
