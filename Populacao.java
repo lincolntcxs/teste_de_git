@@ -23,6 +23,14 @@ public class Populacao {
         } return null;
     }
 
+    public boolean existe_candidato(String buscado) {
+        for(Pessoa pessoa: popula){
+            if(pessoa.get_nome().equalsIgnoreCase(buscado) && pessoa instanceof Candidato){
+                return true;
+            }
+        } return false;
+    }
+
     public void listar_eleitores(){
         for(Pessoa pessoa : popula){
             if(pessoa instanceof Eleitor){
