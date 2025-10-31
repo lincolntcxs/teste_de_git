@@ -8,6 +8,7 @@ public class Main {
         Populacao sta = new Populacao();
         int opcao = 199;
         boolean sair = false;
+        Carregar.carregar_dados_padroes(sta);
 
         while(sair != true) {
             //MENU DE OPCOES
