@@ -1,0 +1,45 @@
+{
+  "candidato": [
+    {
+      "nome": "Carlos Silva",
+      "idade": 45,
+      "sexo": "M",
+      "partido": "PT",
+      "numero": "13"
+    },
+    {
+      "nome": "Maria Santos", 
+      "idade": 52,
+      "sexo": "F",
+      "partido": "PSDB",
+      "numero": "45"
+    },
+    {
+      "nome": "João Oliveira",
+      "idade": 38,
+      "sexo": "M", 
+      "partido": "PL",
+      "numero": "22"
+    }
+  ],
+  "eleitore": [
+    {
+      "nome": "Ana Costa",
+      "idade": 25,
+      "sexo": "F",
+      "titulo": "123456789"
+    },
+    {
+      "nome": "Pedro Alves",
+      "idade": 30,
+      "sexo": "M",
+      "titulo": "987654321"
+    },
+    {
+      "nome": "Julia Lima",
+      "idade": 28,
+      "sexo": "F",
+      "titulo": "456123789"
+    }
+  ]
+}

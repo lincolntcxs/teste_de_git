@@ -52,4 +52,16 @@ public class Populacao {
             System.out.println(popula.get(i).toString() + "\n");
         }
     }
+
+    private void carregarDadosDefault() {
+        // Candidatos
+        this.add_pessoa(new Candidato("Carlos Silva", 45, "M", "PT", "13"));
+        this.add_pessoa(new Candidato("Maria Santos", 52, "F", "PSDB", "45"));
+        this.add_pessoa(new Candidato("Fernanda Lima", 41, "F", "NOVO", "30"));
+        
+        // Eleitores
+        this.add_pessoa(new Eleitor("Ana Costa", 25, "F", "123456789"));
+        this.add_pessoa(new Eleitor("Pedro Alves", 30, "M", "987654321"));
+        this.add_pessoa(new Eleitor("Roberto Santos", 35, "M", "456123780"));
+    }
 }

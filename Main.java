@@ -8,6 +8,8 @@ public class Main {
         Populacao sta = new Populacao();
         int opcao = 199;
         boolean sair = false;
+        Carregar.carregar_dados_manuais(sta); //carregar dados manualmente
+
 
         while(sair != true) {
             //MENU DE OPCOES
@@ -38,6 +40,8 @@ public class Main {
 
                     Candidato cand = new Candidato(nome, idade, sexo, partido, num);
                     sta.add_pessoa(cand);
+                    Gerenciador_db.salvar_candidato(cand);
+
                     break;
 
                 //CADASTRAR ELEITOR    
@@ -57,6 +61,7 @@ public class Main {
 
                     Eleitor eleito = new Eleitor(nome_elei, idade_elei, sexo_elei, titulo);
                     sta.add_pessoa(eleito);
+                    Gerenciador_db.salvar_eleitor(eleito);
                     break;
                 
                 //LISTAR ELEITORES
