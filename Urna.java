@@ -5,6 +5,7 @@ public class Urna {
 
     Urna(){
         this.votos = new ArrayList<>();
+        this.carregar_urna_db();
     }
 
     public void add_voto(Voto voto){
@@ -19,6 +20,12 @@ public class Urna {
 
     public String get_qtdvotos(){
         return "Quantidade de votos: " + votos.size();
+    }
+
+    private void carregar_urna_db(){
+        ArrayList<Voto> vot= Gerenciador_db.carregar_urna();
+        this.votos.addAll(vot);
+        System.out.println("🎯 Urna carregada com: " + this.votos.size() + " votos");
     }
 
     public void listar(){

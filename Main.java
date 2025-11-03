@@ -8,7 +8,7 @@ public class Main {
         Populacao sta = new Populacao();
         int opcao = 199;
         boolean sair = false;
-        Carregar.carregar_dados_manuais(sta); //carregar dados manualmente
+        //Carregar.carregar_dados_manuais(sta); //carregar dados manualmente
 
 
         while(sair != true) {
@@ -115,6 +115,9 @@ public class Main {
                         voto.set_vice(voto_vice);
                         eleicao_2025.add_voto(voto);
                         aux.votar();
+                        Gerenciador_db.votar_no_db(aux.get_nome());
+                        Gerenciador_db.salvar_voto(voto);
+
                         System.out.println("Voto registrado com sucesso \n");
                     } else System.out.println("Esta pessoa ja votou, por favor escolha outra");
                     break;

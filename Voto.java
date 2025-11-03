@@ -3,6 +3,12 @@ public class Voto {
     private String reitor;
     private String vice;
 
+    public Voto(int id, String reitor, String vice){
+        this.id = id;
+        this.reitor = reitor;
+        this.vice = vice;
+    }
+
     Voto(int id){
         this.id = id;
     }
@@ -29,15 +35,5 @@ public class Voto {
     
     public String toString(){
         return "ID do voto: " + get_id() + "\nReitor: " + get_reitor() + "\nVice: " + get_vice();
-    }
-
-    public static void main(String[] args){
-    System.out.println("AQUI");
-    Voto carlos = new Voto(1);
-    carlos.set_reitor("Demostenes");
-    carlos.set_vice("Schneider");
-    System.out.println(carlos.get_reitor());
-    System.out.println(carlos.get_id());
-    System.out.println(carlos.toString());
     }
 }

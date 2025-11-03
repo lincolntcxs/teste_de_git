@@ -5,6 +5,7 @@ public class Populacao {
     
     Populacao() {
         this.popula = new ArrayList<>();
+        this.carrega_dados_bd(); // ✅ Agora carrega do MySQL!
     }
 
     public void add_pessoa(Pessoa pessoa){
@@ -34,7 +35,7 @@ public class Populacao {
     public void listar_eleitores(){
         for(Pessoa pessoa : popula){
             if(pessoa instanceof Eleitor){
-                System.out.println(pessoa);
+                System.out.println(pessoa + "\n");
             }
         }
     }
@@ -42,7 +43,7 @@ public class Populacao {
         public void listar_candidatos(){
         for(Pessoa pessoa : popula){
             if(pessoa instanceof Candidato){
-                System.out.println(pessoa);
+                System.out.println(pessoa + "\n");
             }
         }
     }
@@ -53,15 +54,15 @@ public class Populacao {
         }
     }
 
-    private void carregarDadosDefault() {
-        // Candidatos
-        this.add_pessoa(new Candidato("Carlos Silva", 45, "M", "PT", "13"));
-        this.add_pessoa(new Candidato("Maria Santos", 52, "F", "PSDB", "45"));
-        this.add_pessoa(new Candidato("Fernanda Lima", 41, "F", "NOVO", "30"));
+    private void carrega_dados_bd() {
+        // Carrega candidatos do MySQL
+        ArrayList<Candidato> candidatos = Gerenciador_db.carregar_candidatos();
+        this.popula.addAll(candidatos);
         
-        // Eleitores
-        this.add_pessoa(new Eleitor("Ana Costa", 25, "F", "123456789"));
-        this.add_pessoa(new Eleitor("Pedro Alves", 30, "M", "987654321"));
-        this.add_pessoa(new Eleitor("Roberto Santos", 35, "M", "456123780"));
+        // Carrega eleitores do MySQL
+        ArrayList<Eleitor> eleitores = Gerenciador_db.carregar_eleitores();
+        this.popula.addAll(eleitores);
+        
+        System.out.println("🎯 População carregada: " + this.popula.size() + " pessoas");
     }
 }
