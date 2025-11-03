@@ -8,6 +8,10 @@ public class Populacao {
         this.carrega_dados_bd(); // ✅ Agora carrega do MySQL!
     }
 
+    public ArrayList<Pessoa> get_pessoas(){
+        return this.popula;
+    }
+
     public void add_pessoa(Pessoa pessoa){
         popula.add(pessoa);
     }

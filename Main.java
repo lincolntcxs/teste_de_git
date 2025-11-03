@@ -15,7 +15,7 @@ public class Main {
             //MENU DE OPCOES
             System.out.println("Escolha uma opcao: \n#1 -> Cadastrar candidato \n#2 -> Cadastrar eleitor" + 
             "\n#3 -> Listar eleitores \n#4 -> Listar candidatos \n#5 -> Listar populacao \n#6 -> Buscar eleitor" +
-            "\n#7 -> Votar \n#8 -> Resultado da eleição \n#-1 -> Sair ");
+            "\n#7 -> Votar \n#8 -> Simular Eleicao \n#9 -> Resultado da eleição \n#-1 -> Sair ");
             opcao = entrada.nextInt();
             entrada.nextLine(); //LIMPA O BUFFER
 
@@ -84,7 +84,7 @@ public class Main {
                     System.out.println("Digite o nome do eleitor que desja buscar");
                     String buscado = entrada.nextLine();
                     Pessoa econtrado = sta.buscar_eleitor(buscado);
-                    econtrado.toString();
+                    System.out.println(econtrado.toString() + "\n");
                     break;
 
                 //VOTAR    
@@ -122,10 +122,16 @@ public class Main {
                     } else System.out.println("Esta pessoa ja votou, por favor escolha outra");
                     break;
 
-                //RESULTADO ELEICAO  
+                //SIMULAR ELEICAO   
                 case 8:
-                    eleicao_2025.listar();
+                    Simulador_votos.simularVotacao(sta, eleicao_2025);
                     break;
+
+                //RESULTADO ELEICAO  
+                case 9:
+                    eleicao_2025.mostrar_resultado_eleicao();
+                    break;
+
                 //SAIR    
                 case -1:
                     System.out.println("Até mais");

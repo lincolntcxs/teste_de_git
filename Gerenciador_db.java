@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.mysql.cj.jdbc.ClientPreparedStatement;
+//import com.mysql.cj.jdbc.ClientPreparedStatement;
 
 public class Gerenciador_db {
     /* 
@@ -82,7 +82,7 @@ public class Gerenciador_db {
             stmt.setString(2, voto.get_vice());
 
             stmt.executeUpdate();
-            System.out.println("✅ Voto salvo no MySQL:  + voto.get_id()");
+            System.out.println("✅ Voto salvo no MySQL:"  + voto.get_id());
         }catch (SQLException e){
             System.out.println("❌ Erro ao salvar voto: " + e.getMessage());
         }
